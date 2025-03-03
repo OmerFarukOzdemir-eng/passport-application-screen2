@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTÜ - Admin Paneli</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/mtu-logo.png" alt="MTÜ Logo" class="logo">
+            <h1>MALATYA TURGUT ÖZAL ÜNİVERSİTESİ</h1>
+            <div class="header-title">Yönetim Paneli</div>
+            <img src="images/ozal-logo2.png" alt="Turgut Özal" class="ozal-photo">
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" class="active">Başvuru Listesi</a></li>
+                <li><a href="#">Onaylananlar</a></li>
+                <li><a href="#">Bekleyenler</a></li>
+                <li><a href="#">Reddedilenler</a></li>
+                <li><a href="#">Çıkış</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div class="admin-panel">
+                <div class="search-bar">
+                    <input type="text" placeholder="Ad, TC No veya başvuru no ile ara...">
+                    <button class="search-btn"><i class="fas fa-search"></i> Ara</button>
+                </div>
+
+                <div class="basvuru-listesi">
+                    <!-- Başvuru kartları -->
+                    <div class="basvuru-card">
+                        <div class="basvuru-header">
+                            <h3>Başvuru No: #2024001</h3>
+                            <span class="basvuru-tarih">22.02.2024</span>
+                        </div>
+                        <div class="basvuru-bilgileri">
+                            <div class="kisi-bilgi">
+                                <p><strong>Ad Soyad:</strong> Ahmet Yılmaz</p>
+                                <p><strong>TC No:</strong> 12345678901</p>
+                                <p><strong>Pasaport Türü:</strong> Hususi</p>
+                            </div>
+                            <div class="dosyalar">
+                                <a href="#" class="dosya-link"><i class="fas fa-file-pdf"></i> Kimlik</a>
+                                <a href="#" class="dosya-link"><i class="fas fa-file-pdf"></i> Eş Kimlik</a>
+                                <a href="#" class="dosya-link"><i class="fas fa-file-pdf"></i> Çocuk 1</a>
+                                <a href="#" class="dosya-link"><i class="fas fa-file-pdf"></i> Çocuk 2</a>
+                            </div>
+                            <div class="islem-butonlari">
+                                <button class="onay-btn" title="Onayla"><i class="fas fa-check"></i></button>
+                                <button class="red-btn" title="Reddet"><i class="fas fa-times"></i></button>
+                                <button class="detay-btn" title="Detaylar"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="red-form" style="display: none;">
+                            <input type="text" placeholder="Red gerekçesi yazın..." class="red-input">
+                            <button class="red-onay-btn">Reddet</button>
+                            <button class="red-iptal-btn">İptal</button>
+                        </div>
+                    </div>
+                    <!-- Diğer başvuru kartları buraya eklenecek -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Başvuru Detay Modal -->
+    <div id="basvuruDetayModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Başvuru Detayları</h2>
+            <div class="basvuru-detay-content">
+                <!-- JavaScript ile doldurulacak -->
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html> 

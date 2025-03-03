@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTÜ Pasaport Başvuru Sistemi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="images/mtu-logo.png" alt="MTÜ Logo" class="logo">
+            <h1>MALATYA TURGUT ÖZAL ÜNİVERSİTESİ</h1>
+            <div class="header-title">Hususi/Hizmet Pasaport Başvurusu</div>
+            <img src="images/ozal-logo2.png" alt="Turgut Özal" class="ozal-photo">
+        </header>
+
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Başvurularım</a></li>
+                <li><a href="#" class="active">Yeni Başvuru</a></li>
+                <li><a href="#">Onaylananlar</a></li>
+                <li><a href="#">Bekleyenler</a></li>
+                <li><a href="#"><i class="fas fa-sign-in-alt"></i> Sisteme giriş</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <form id="pasaportForm" class="basvuru-form">
+                <div class="form-group required">
+                    <label for="pasaportTuru">Talep Edilen Pasaport Türü</label>
+                    <select id="pasaportTuru" required>
+                        <option value="">Bu alan zorunludur</option>
+                        <option value="hususi">Hususi Pasaport</option>
+                        <option value="hizmet">Hizmet Pasaportu</option>
+                    </select>
+                </div>
+
+                <div class="form-group required">
+                    <label for="tcNo">T.C. No</label>
+                    <input type="text" id="tcNo" maxlength="11" required pattern="[0-9]{11}">
+                </div>
+
+                <div class="form-group required">
+                    <label for="isimSoyisim">İsim Soyisim</label>
+                    <input type="text" id="isimSoyisim" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="kadroDerece">Kadro Derecesi</label>
+                    <input type="text" id="kadroDerece" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="kadroUnvan">Kadro Unvanı</label>
+                    <input type="text" id="kadroUnvan" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="kurumSicil">Kurum Sicil No</label>
+                    <input type="text" id="kurumSicil" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="telefon">Telefon No</label>
+                    <input type="tel" id="telefon" required pattern="[0-9]{10}">
+                </div>
+
+                <div class="form-group required">
+                    <label for="email">E-Posta Adresi</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="nufusMudurlugu">İstediğiniz Nüfus Müdürlüğü</label>
+                    <input type="text" id="nufusMudurlugu" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="kimlikFoto">Kimlik Fotokopisi (PDF)</label>
+                    <input type="file" id="kimlikFoto" accept=".pdf" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="kimlikFotoEs">Kimlik Fotokopisi - Eş (PDF)</label>
+                    <input type="file" id="kimlikFotoEs" accept=".pdf" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="cocukSayisi">Çocuk Sayısı</label>
+                    <input type="number" id="cocukSayisi" min="0" value="0" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="cocukKimlik1">Çocuk Kimlik Fotokopisi 1 (PDF)</label>
+                    <input type="file" id="cocukKimlik1" accept=".pdf" required>
+                </div>
+
+                <div class="form-group required">
+                    <label for="cocukKimlik2">Çocuk Kimlik Fotokopisi 2 (PDF)</label>
+                    <input type="file" id="cocukKimlik2" accept=".pdf" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Başvuru Tamamla</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    <script src="app.js"></script>
+    <script>
+    document.getElementById('pasaportForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // TC Kimlik doğrulama
+        const tcNo = document.getElementById('tcNo').value;
+        if (!validateTCKN(tcNo)) {
+            alert('Geçerli bir TC Kimlik numarası giriniz');
+            return;
+        }
+        
+        // Telefon format kontrolü
+        const telefon = document.getElementById('telefon').value;
+        if (!validatePhone(telefon)) {
+            alert('Geçerli bir telefon numarası giriniz');
+            return;
+        }
+        
+        // Form gönderimi
+        this.submit();
+    });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTÜ - Giriş</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="images/mtu-logo.png" alt="MTÜ Logo" class="login-logo">
+            <h2>Malatya Turgut Özal Üniversitesi</h2>
+            <h3>Pasaport Başvuru</h3>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="email">E-posta adresi</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Parola</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" required>
+                    </div>
+                </div>
+                <button type="submit" class="login-btn">Oturum aç</button>
+                <a href="register.html" class="register-link">Hesap oluştur</a>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html> 

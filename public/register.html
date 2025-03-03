@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MTÜ - Hesap Oluştur</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="images/mtu-logo.png" alt="MTÜ Logo" class="login-logo">
+            <h2>Malatya Turgut Özal Üniversitesi</h2>
+            <h3>Hesap Oluştur</h3>
+            <form id="registerForm" class="login-form">
+                <div class="form-group required">
+                    <label for="tcNo">T.C. Kimlik No</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="tcNo" maxlength="11" pattern="[0-9]{11}" required>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label for="adSoyad">Ad Soyad</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="adSoyad" required>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label for="email">E-posta (@mtu.edu.tr)</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" pattern=".+@mtu\.edu\.tr$" required>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label for="telefon">Telefon</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="telefon" pattern="[0-9]{10}" required placeholder="5XX XXX XXXX">
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label for="password">Parola</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" minlength="6" required>
+                    </div>
+                </div>
+                <div class="form-group required">
+                    <label for="passwordConfirm">Parola Tekrar</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="passwordConfirm" minlength="6" required>
+                    </div>
+                </div>
+                <button type="submit" class="login-btn">Hesap Oluştur</button>
+                <a href="login.html" class="register-link">Zaten hesabınız var mı? Giriş yapın</a>
+            </form>
+        </div>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html> 
